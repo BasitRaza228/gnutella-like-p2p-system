@@ -111,7 +111,7 @@ func (p *Peer) DownloadFile(filename, outputDir string) error {
 		return fmt.Errorf("no peers available for file")
 	}
 
-	// Update active peers
+	// Update the active peers
 	p.PeersLock.Lock()
 	for _, peer := range response.Peers {
 		p.ActivePeers[peer] = time.Now()
